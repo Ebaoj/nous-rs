@@ -18,3 +18,8 @@ full = ["serde", "openai", "async"]
 nous-core = { workspace = true }
 nous-protocol = { workspace = true }
 nous-runtime = { workspace = true }
+serde_json = { workspace = true }
+
+[[example]]
+name = "basic_flow"
+path = "../examples/basic_flow.rs"
