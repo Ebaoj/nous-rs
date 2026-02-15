@@ -1,0 +1,22 @@
+[package]
+name = "nous-protocol"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "Protocol messages, builders, validation, and contracts for the Nous protocol"
+
+[features]
+default = ["serde"]
+serde = ["dep:serde", "dep:serde_json", "nous-core/serde"]
+full = ["serde"]
+
+[dependencies]
+nous-core = { workspace = true }
+thiserror = { workspace = true }
+uuid = { workspace = true }
+
+# Optional
+serde = { workspace = true, optional = true }
+serde_json = { workspace = true, optional = true }

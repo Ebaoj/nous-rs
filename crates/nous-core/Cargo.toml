@@ -1,0 +1,26 @@
+[package]
+name = "nous-core"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "Core types, confidence, embeddings math, quantization, and logical atoms for the Nous protocol"
+
+[features]
+default = ["serde"]
+serde = ["dep:serde", "dep:serde_json", "uuid/serde"]
+openai = ["dep:reqwest", "dep:tokio", "dep:async-trait"]
+full = ["serde", "openai"]
+
+[dependencies]
+thiserror = { workspace = true }
+uuid = { workspace = true }
+regex = { workspace = true }
+
+# Optional
+serde = { workspace = true, optional = true }
+serde_json = { workspace = true, optional = true }
+reqwest = { workspace = true, optional = true }
+tokio = { workspace = true, optional = true }
+async-trait = { workspace = true, optional = true }

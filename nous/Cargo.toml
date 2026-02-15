@@ -1,0 +1,20 @@
+[package]
+name = "nous"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "Nous — AI-native communication protocol beyond human language"
+
+[features]
+default = ["serde"]
+serde = ["nous-core/serde", "nous-protocol/serde", "nous-runtime/serde"]
+openai = ["nous-core/openai"]
+async = ["nous-runtime/async"]
+full = ["serde", "openai", "async"]
+
+[dependencies]
+nous-core = { workspace = true }
+nous-protocol = { workspace = true }
+nous-runtime = { workspace = true }

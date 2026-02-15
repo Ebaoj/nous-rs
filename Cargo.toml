@@ -1,0 +1,42 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/nous-core",
+    "crates/nous-protocol",
+    "crates/nous-runtime",
+    "nous",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+authors = ["Joabe Cornelio <joabecornelio@gmail.com>"]
+license = "MIT"
+repository = "https://github.com/Ebaoj/nous-rs"
+description = "AI-native communication protocol — beyond human language"
+
+[workspace.dependencies]
+# Internal crates
+nous-core = { path = "crates/nous-core" }
+nous-protocol = { path = "crates/nous-protocol" }
+nous-runtime = { path = "crates/nous-runtime" }
+
+# Error handling
+thiserror = "2"
+
+# Serialization
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+# UUIDs
+uuid = { version = "1", features = ["v4"] }
+
+# Regex
+regex = "1"
+
+# Async
+tokio = { version = "1", features = ["full"] }
+async-trait = "0.1"
+
+# HTTP (for OpenAI)
+reqwest = { version = "0.12", features = ["json"] }
